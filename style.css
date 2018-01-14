@@ -1,0 +1,70 @@
+*{
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+body{
+  padding-top: 80px;
+}
+
+.container{
+  display: block;
+  height: 458px;
+  width: 375px;
+  background: rgb(90, 92, 96);
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #aaaaaa;
+}
+
+.screen{
+  background: rgb(220, 223, 229);
+  border-radius: 10px;
+  height: 75px;
+  margin:0 auto;
+  margin: 15px;
+}
+
+.buttons{
+  border-radius: 10px;
+  background: rgb(230, 234, 242);
+  height: 55px;
+  width: 75px;
+  margin:6px;
+  float:left;
+  clear:right;
+}
+
+.button-top{
+  border-radius: 10px;
+  background: rgb(242, 142, 12);
+  height: 55px;
+  width: 75px;
+  margin:6px;
+  float:right;
+}
+
+.solar{
+  margin:6px;
+  height:55px;
+  width:150px;
+  float:left;
+  background: rgb(36, 16, 45);
+}
+
+.operator{
+  border-radius: 10px;
+  background: rgb(70, 114, 186);
+  height: 55px;
+  width: 75px;
+  margin:6px;
+  float:left;
+  clear:right;
+}
+
+button:hover{
+  background:white;
+}
