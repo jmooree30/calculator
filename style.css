@@ -64,7 +64,7 @@ h1{
   background: rgb(36, 16, 45);
 }
 
-.operator{
+.operator, .equals{
   border-radius: 10px;
   background: rgb(70, 114, 186);
   height: 55px;
