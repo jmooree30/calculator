@@ -2,10 +2,19 @@
   box-sizing: border-box;
   font-weight: bold;
   font-size: 18px;
+  font-family: calculator;
 }
 
 body{
-  padding-top: 80px;
+  background:rgb(237, 239, 242);
+}
+
+h1{
+  text-shadow: 2px 2px 4px #000000;
+  padding-bottom: 0px;
+  text-align: center;
+  font-size: 60px;
+  color: white;
 }
 
 .container{
@@ -67,4 +76,10 @@ body{
 
 button:hover{
   background:white;
+}
+
+.output{
+  padding-top: 30px;
+  float:right;
+  font-size: 44px;
 }
