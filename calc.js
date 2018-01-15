@@ -2,10 +2,34 @@ let a=0
 let b=0
 let operation=0
 
-function add(a,b){return a+b;}
-function subtract(a,b){return a-b;}
-function divide(a,b){return a/b;}
-function multiply(a,b){return a*b;}
+function add(a,b){
+  a = Math.round(a+b);
+  if(a.toString().length > 14){
+   return a.toExponential(3);
+ }
+ else return a;
+}
+function subtract(a,b){
+  a = Math.round(a-b);
+  if(a.toString().length > 14){
+   return a.toExponential();
+ }
+ else return a;
+}
+function divide(a,b){
+  a = Math.round(a/b);
+  if(a.toString().length > 14){
+   return a.toExponential(3);
+ }
+ else return a;
+}
+function multiply(a,b){
+  a = Math.round(a*b);
+  if(a.toString().length > 14){
+   return a.toExponential(3);
+ }
+ else return a;
+}
 
 function operate(a,b,method){
   switch(method){
@@ -28,8 +52,8 @@ buttons=document.querySelectorAll(".buttons")
 for(i=0;i<buttons.length;i++){
   buttons[i].addEventListener("click", function(e){
     if(document.getElementById("output").innerHTML.length < 15){
-    document.getElementById("output").innerHTML += e.target.innerHTML;
-  }
+      document.getElementById("output").innerHTML += e.target.innerHTML;
+    }
   })
 }
 
@@ -37,7 +61,6 @@ operator=document.getElementsByClassName("operator");
 for(i=0;i<operator.length;i++){
   operator[i].addEventListener("click", function(e){
     operation=e.target.id;
-    console.log(document.getElementById("output").innerHTML.length)
     a = Number(document.getElementById("output").innerHTML)
     document.getElementById("output").innerHTML = ""
   });
@@ -53,3 +76,8 @@ document.getElementById("all-clear").addEventListener("click", function(){
   a=0
   b=0
 });
+
+document.getElementById("delete").addEventListener("click", function(){
+  backspace=document.getElementById("output").innerHTML;
+  document.getElementById("output").innerHTML=backspace.slice(0,-1);
+})
