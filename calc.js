@@ -27,7 +27,9 @@ function operate(a,b,method){
 buttons=document.querySelectorAll(".buttons")
 for(i=0;i<buttons.length;i++){
   buttons[i].addEventListener("click", function(e){
+    if(document.getElementById("output").innerHTML.length < 15){
     document.getElementById("output").innerHTML += e.target.innerHTML;
+  }
   })
 }
 
@@ -35,6 +37,7 @@ operator=document.getElementsByClassName("operator");
 for(i=0;i<operator.length;i++){
   operator[i].addEventListener("click", function(e){
     operation=e.target.id;
+    console.log(document.getElementById("output").innerHTML.length)
     a = Number(document.getElementById("output").innerHTML)
     document.getElementById("output").innerHTML = ""
   });
@@ -47,4 +50,6 @@ document.getElementById("equals").addEventListener("click", function(){
 
 document.getElementById("all-clear").addEventListener("click", function(){
   document.getElementById("output").innerHTML = "";
+  a=0
+  b=0
 });
