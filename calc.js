@@ -23,19 +23,22 @@ function operate(a,b,method){
   }
 }
 
-function addInput(a){
+function addInput(){
   buttons=document.querySelectorAll(".buttons")
   for(i=0;i<buttons.length;i++){
     buttons[i].addEventListener("click", function(e){
       document.getElementById("output").innerHTML += e.target.innerHTML;
-      a = Number(e.target.innerHTML)
-      console.log(a)
     })
   }
 }
 
-function doMaths(){
-  
+function operators(){
+  operator=document.getElementsByClassName("operator");
+  for(i=0;i<operator.length;i++)
+    operator[i].addEventListener("click",function(e){
+      console.log(e.target.id);
+      return true;
+    });
 }
 
 function equals(){
@@ -50,6 +53,13 @@ function clear(){
   });
 }
 
+if (operators()){
+  console.log("Cool")
+}
+else{
+  console.log("not cool")
+}
+
 clear()
 equals()
-doMaths()
+addInput()
