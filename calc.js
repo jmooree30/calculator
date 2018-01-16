@@ -6,19 +6,18 @@ function add(a,b){
   ad = a+b;
   round = ad.toFixed(3);
   toBig = parseFloat(round).toExponential(3);
-  console.log(ad.toString().length)
   return(ad.toString().length > 15) ? toBig : parseFloat(round);
 }
 
 function subtract(a,b){
   sub = a-b;
   round = sub.toFixed(3);
-  console.log(round)
   toBig = parseFloat(round).toExponential(3);
   return(sub.toString().length > 15) ? toBig : parseFloat(round);
 }
 
 function divide(a,b){
+  if (b===0){return "Nope."}
   div = a/b;
   round = div.toFixed(3);
   toBig = parseFloat(round).toExponential(3);
