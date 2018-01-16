@@ -1,8 +1,9 @@
 let a=0;
-let b="default";
+let b=0;
 let operation=0;
 let clicked = 0;
 let stringMath = 0;
+let test = 0;
 
 function add(a,b){
   ad = a+b;
@@ -56,10 +57,12 @@ for(i=0;i<buttons.length;i++){
     if(e.target.innerHTML == "." && document.getElementById("output").innerHTML.includes(".")){return};
     if(clicked == 1){
       document.getElementById("output").innerHTML = "";
+      test = 1;
     };
     clicked = 0;
     if(document.getElementById("output").innerHTML.length < 15){
       document.getElementById("output").innerHTML += e.target.innerHTML;
+      test = 1;
     };
   });
 };
@@ -79,12 +82,13 @@ for(i=0;i<operator.length;i++){
         a = Number(document.getElementById("output").innerHTML);
         clicked = 1;
         stringMath = 1;
+        test = 0;
       };
     });
 };
 
 document.getElementById("equals").addEventListener("click", function(){
-  if(b=="default"){return};
+  if(test==0){return};
   if(operation==0){return};
   b = Number(document.getElementById("output").innerHTML);
   operate(a,b,operation);
@@ -95,10 +99,11 @@ document.getElementById("equals").addEventListener("click", function(){
 document.getElementById("all-clear").addEventListener("click", function(){
   document.getElementById("output").innerHTML = "";
   a=0;
-  b="default";
+  b=0;
   stringMath=0;
   clicked=0;
   operation=0;
+  test=0;
 });
 
 document.getElementById("delete").addEventListener("click", function(){
