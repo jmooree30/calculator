@@ -1,6 +1,8 @@
-let a=0
-let b=0
-let operation=0
+let a=0;
+let b=0;
+let operation=0;
+let clicked = 0;
+let stringMath = 0;
 
 function add(a,b){
   ad = a+b;
@@ -18,7 +20,7 @@ function subtract(a,b){
 
 function divide(a,b){
   if (b===0){return "Nope."}
-  div = a/b;
+    div = a/b;
   round = div.toFixed(3);
   toBig = parseFloat(round).toExponential(3);
   return(div.toString().length > 15) ? toBig : parseFloat(round);
@@ -51,6 +53,10 @@ function operate(a,b,method){
 buttons=document.querySelectorAll(".buttons")
 for(i=0;i<buttons.length;i++){
   buttons[i].addEventListener("click", function(e){
+    if(clicked == 1){
+      document.getElementById("output").innerHTML = ""
+    }
+    clicked = 0
     if(document.getElementById("output").innerHTML.length < 15){
       document.getElementById("output").innerHTML += e.target.innerHTML;
     }
@@ -60,21 +66,35 @@ for(i=0;i<buttons.length;i++){
 operator=document.getElementsByClassName("operator");
 for(i=0;i<operator.length;i++){
   operator[i].addEventListener("click", function(e){
-    operation=e.target.id;
-    a = Number(document.getElementById("output").innerHTML)
-    document.getElementById("output").innerHTML = ""
+    console.log(clicked)
+    if(stringMath == 1){
+      b = Number(document.getElementById("output").innerHTML)
+      operate(a,b,operation);
+      a = Number(document.getElementById("output").innerHTML)
+      clicked = 1
+    }
+    else{
+      operation=e.target.id;
+      a = Number(document.getElementById("output").innerHTML)
+      clicked = 1;
+      stringMath = 1;
+    }
   });
 }
 
 document.getElementById("equals").addEventListener("click", function(){
   b = Number(document.getElementById("output").innerHTML)
   operate(a,b,operation);
+  clicked = 0;
+  stringMath = 0;
 });
 
 document.getElementById("all-clear").addEventListener("click", function(){
   document.getElementById("output").innerHTML = "";
-  a=0
-  b=0
+  a=0;
+  b=0;
+  stringMath = 0;
+  clicked = 0;
 });
 
 document.getElementById("delete").addEventListener("click", function(){
