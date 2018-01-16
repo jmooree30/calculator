@@ -3,32 +3,33 @@ let b=0
 let operation=0
 
 function add(a,b){
-  a = Math.round(a+b);
-  if(a.toString().length > 14){
-   return a.toExponential(3);
- }
- else return a;
+  ad = a+b;
+  round = ad.toFixed(3);
+  toBig = parseFloat(round).toExponential(3);
+  console.log(ad.toString().length)
+  return(ad.toString().length > 15) ? toBig : parseFloat(round);
 }
+
 function subtract(a,b){
-  a = Math.round(a-b);
-  if(a.toString().length > 14){
-   return a.toExponential();
- }
- else return a;
+  sub = a-b;
+  round = sub.toFixed(3);
+  console.log(round)
+  toBig = parseFloat(round).toExponential(3);
+  return(sub.toString().length > 15) ? toBig : parseFloat(round);
 }
+
 function divide(a,b){
-  a = Math.round(a/b);
-  if(a.toString().length > 14){
-   return a.toExponential(3);
- }
- else return a;
+  div = a/b;
+  round = div.toFixed(3);
+  toBig = parseFloat(round).toExponential(3);
+  return(div.toString().length > 15) ? toBig : parseFloat(round);
 }
+
 function multiply(a,b){
-  a = Math.round(a*b);
-  if(a.toString().length > 14){
-   return a.toExponential(3);
- }
- else return a;
+  mult = a*b;
+  round = mult.toFixed(3);
+  toBig = parseFloat(round).toExponential(3);
+  return(mult.toString().length > 15) ? toBig : parseFloat(round);
 }
 
 function operate(a,b,method){
