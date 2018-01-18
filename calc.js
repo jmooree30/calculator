@@ -14,6 +14,7 @@ function add(a,b){
 
 function subtract(a,b){
   sub = a-b;
+  console.log(sub)
   round = sub.toFixed(3);
   toBig = parseFloat(round).toExponential(3);
   return(sub.toString().length > 15) ? toBig : parseFloat(round);
@@ -54,11 +55,12 @@ function operate(a,b,method){
 buttons=document.querySelectorAll(".buttons");
 for(i=0;i<buttons.length;i++){
   buttons[i].addEventListener("click", function(e){
-    if(e.target.innerHTML == "." && document.getElementById("output").innerHTML.includes(".")){return};
+    
     if(clicked == 1){
       document.getElementById("output").innerHTML = "";
       test = 1;
     };
+    if(e.target.innerHTML == "." && document.getElementById("output").innerHTML.includes(".")){return};
     clicked = 0;
     if(document.getElementById("output").innerHTML.length < 15){
       document.getElementById("output").innerHTML += e.target.innerHTML;
