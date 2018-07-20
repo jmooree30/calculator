@@ -1,6 +1,5 @@
 # calculator
-
-Basic calculator written in Javascript.
+Calculator built with  vanilla Javascript/HTML/CSS
 
 ![Image Hover Text](/ss.png)
 
