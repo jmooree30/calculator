@@ -1,30 +1,30 @@
-let a=0;
-let b=0;
-let operation=0;
+let a = 0;
+let b = 0;
+let operation = 0;
 let clicked = 0;
 let stringMath = 0;
 let test = 0;
 
 function add(a,b){
-  ad = a+b;
-  round = ad.toFixed(3);
-  toBig = parseFloat(round).toExponential(3);
+  let ad = a+b;
+  let round = ad.toFixed(3);
+  let toBig = parseFloat(round).toExponential(3);
   return(parseFloat(round).toString().length > 15) ? toBig : parseFloat(round);
 };
 
 function subtract(a,b){
-  sub = a-b;
+  let sub = a-b;
   console.log(sub)
-  round = sub.toFixed(3);
-  toBig = parseFloat(round).toExponential(3);
+  let round = sub.toFixed(3);
+  let toBig = parseFloat(round).toExponential(3);
   return(parseFloat(round).toString().length > 15) ? toBig : parseFloat(round);
 };
 
 function divide(a,b){
   if (b===0){return "Nope."};
-  div = a/b;
-  round = div.toFixed(3);
-  toBig = parseFloat(round).toExponential(3);
+  let div = a/b;
+  let round = div.toFixed(3);
+  let toBig = parseFloat(round).toExponential(3);
   return(parseFloat(round).toString().length > 15) ? toBig : parseFloat(round);
 };
 
